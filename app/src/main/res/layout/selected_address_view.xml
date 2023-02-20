@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:elevation="@dimen/margin_10"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_15">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/margin_10"
+        android:gravity="center_vertical"
+        android:padding="@dimen/margin_15"
+        android:text="@string/set_as_fav"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txtSize_18"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_15"
+        android:autofillHints="name"
+        android:focusableInTouchMode="false"
+        android:hint="@string/select_location"
+        android:padding="@dimen/margin_15"
+        android:textColor="@color/black"
+        android:textStyle="normal"
+        android:theme="@style/EditTextTheme" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_15"
+        android:text="@string/select_location_type"
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        style="@style/RadioButtonTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_10"
+        android:theme="@style/RadioButtonTheme">
+
+        <RadioButton
+            android:id="@+id/radioHome"
+            style="@style/RadioButtonTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:buttonTint="@color/black"
+            android:text="@string/home"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtSize_16"
+            android:textStyle="normal"
+            android:theme="@style/RadioButtonTheme"
+            android:typeface="sans" />
+
+        <RadioButton
+            android:id="@+id/radioWork"
+            style="@style/RadioButtonTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/black"
+            android:text="@string/work"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtSize_16"
+            android:textStyle="normal"
+            android:theme="@style/RadioButtonTheme"
+            android:typeface="sans" />
+
+        <RadioButton
+            android:id="@+id/radioOther"
+            style="@style/RadioButtonTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/black"
+            android:text="@string/other"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtSize_16"
+            android:textStyle="normal"
+            android:theme="@style/RadioButtonTheme"
+            android:typeface="sans" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edtOtherType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginBottom="@dimen/margin_15"
+        android:background="@drawable/button_bg_grey"
+        android:hint="@string/other"
+        android:padding="@dimen/margin_15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/colorBlack50"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg"
+            android:elevation="@dimen/margin_10"
+            android:gravity="center"
+            android:padding="@dimen/margin_15"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txtSize_16"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvOk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@color/wallet_toolbar_color"
+            android:elevation="@dimen/margin_10"
+            android:gravity="center"
+            android:padding="@dimen/margin_15"
+            android:text="@string/save"
+            android:textColor="@color/black_same"
+            android:textSize="@dimen/txtSize_16" />
+
+    </LinearLayout>
+
+</LinearLayout>

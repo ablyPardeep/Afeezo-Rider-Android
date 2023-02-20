@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool"
+        layout="@layout/toolbar_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_card_number"
+            android:textColor="@color/primary_text"
+            android:textSize="18sp" />
+
+        <com.braintreepayments.cardform.view.CardEditText
+            android:id="@+id/bt_card_form_card_number"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_bg"
+            android:hint="@string/xxxx_xxxx_xxxx_xxxx"
+            android:inputType="number"
+            android:padding="5dp"
+            android:textColor="@color/primary_text"
+            android:textCursorDrawable="@null"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/expiry_date"
+            android:textColor="@color/primary_text"
+            android:textSize="18sp" />
+
+        <com.braintreepayments.cardform.view.ExpirationDateEditText
+            android:id="@+id/bt_card_expiryDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_bg"
+            android:hint="@string/mm_yyyy"
+
+            android:inputType="number"
+            android:padding="5dp"
+            android:textColor="@color/primary_text"
+            android:textCursorDrawable="@null"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/cvv_code"
+            android:textColor="@color/primary_text"
+            android:textSize="18sp" />
+
+        <com.braintreepayments.cardform.view.CvvEditText
+            android:id="@+id/bt_card_cvvcode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_bg"
+            android:hint="@string/_123"
+            android:inputType="number"
+            android:padding="5dp"
+            android:textColor="@color/primary_text"
+            android:textCursorDrawable="@null"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/checkSaveCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/save_this_card"
+            android:textSize="18sp"
+            android:theme="@style/CheckboxStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/addCardLt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_bg"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/add"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlackSelection"
+            android:padding="@dimen/margin_15">
+
+            <TextView
+                android:id="@+id/tvPaidWith"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/paid_with"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtSize_14"
+                app:layout_constraintBottom_toTopOf="@+id/billAmount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/billAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtSize_30"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPaidWith" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="@color/green_color"
+                android:gravity="center"
+                android:padding="@dimen/margin_15"
+                android:layout_margin="@dimen/margin_15"
+                android:textAllCaps="false"
+                android:textColor="@color/white_same"
+                android:textSize="@dimen/txtSize_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/billAmount" />
+
+            <TextView
+                android:id="@+id/discountName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_15"
+                android:background="@drawable/dotted_bg"
+                android:gravity="center"
+                android:padding="@dimen/margin_10"
+                android:text="@string/discount_applied"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/txtSize_16"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/status" />
+
+            <TextView
+                android:id="@+id/tvLabelDistance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:gravity="end"
+                android:padding="@dimen/margin_5"
+                android:text="@string/distance"
+                android:textColor="@color/colorBlack50"
+                app:layout_constraintEnd_toStartOf="@+id/tvValDistance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/discountName" />
+
+            <TextView
+                android:id="@+id/tvValDistance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_5"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvLabelDistance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvLabelDistance" />
+
+            <TextView
+                android:id="@+id/tvLabelDuration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:padding="@dimen/margin_5"
+                android:text="@string/duration"
+                android:textColor="@color/colorBlack50"
+                app:layout_constraintEnd_toStartOf="@+id/tvValDuration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelDistance" />
+
+            <TextView
+                android:id="@+id/tvValDuration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_5"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvLabelDuration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelDuration" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pick_from"
+                    android:textColor="@color/primary_text" />
+
+                <TextView
+                    android:id="@+id/srcAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drop_at"
+                    android:textColor="@color/primary_text" />
+
+                <TextView
+                    android:id="@+id/destAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_15">
+
+            <com.rider.afeezo.generic.CircleImageView
+                android:id="@+id/driverImage"
+                android:layout_width="@dimen/size_150"
+                android:layout_height="@dimen/size_150"
+                android:layout_margin="@dimen/margin_15"
+                android:src="@drawable/user_placeholder"
+                app:civ_border_color="@android:color/white"
+                app:civ_border_width="@dimen/margin_1" />
+
+
+            <TextView
+                android:id="@+id/driverName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_15"
+                android:padding="@dimen/margin_15"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtSize_18" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_15"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <RatingBar
+                    android:id="@+id/driverRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_40"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:numStars="5"
+                    android:stepSize="5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ratingLt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_50"
+                android:layout_margin="@dimen/margin_15"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/new_btn_bg"
+                android:text="@string/share_feedback"
+                android:textAllCaps="false"
+                android:textColor="@color/black_same"
+                android:textSize="@dimen/txtSize_14"
+                android:textStyle="normal"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+

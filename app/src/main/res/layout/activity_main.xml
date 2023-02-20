@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.rider.afeezo.activity.MapFrontActivity">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/activity_maps"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/ivLocationPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name"
+        android:paddingBottom="@dimen/size_50"
+        android:src="@drawable/ic_marker_source" />
+
+    <LinearLayout
+        android:id="@+id/hsv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/hsvLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/searchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:background="@drawable/edt_bg"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edt_bg"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        layout="@layout/layout_src_place_autocomplete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
+
+                    <include
+                        layout="@layout/layout_dest_place_autocomplete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/verticalLine"
+                    android:layout_width="@dimen/margin_1"
+                    android:layout_height="@dimen/size_40"
+                    android:layout_marginStart="@dimen/size_29"
+                    android:background="@color/colorBlack50"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/lnRideData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_15"
+                    android:text="@string/choose_your_ride"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/txtSize_14" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerVehicles"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_200"
+                    android:paddingTop="@dimen/margin_1"
+                    android:paddingBottom="@dimen/margin_1"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/car_layout" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/estimated_fare"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/confirmLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <!--android:marqueeRepeatLimit="marquee_forever"
+                    android:ellipsize="marquee"-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_5"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/totalFare"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="@dimen/margin_5"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/primary_text"
+                                app:drawableRightCompat="@drawable/ic_info_border" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total_fare_without_colon"
+                            android:textSize="@dimen/txtSize_13" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/couponLt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/margin_15">
+
+                            <TextView
+                                android:id="@+id/txt_applyCoupon"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="@dimen/margin_15"
+                                android:gravity="start|center_vertical"
+                                android:paddingTop="@dimen/margin_10"
+                                android:paddingBottom="@dimen/margin_10"
+                                android:text="@string/apply_coupon"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/txtSize_14"
+                                app:drawableEndCompat="@drawable/ic_right_arrow"
+                                app:drawableStartCompat="@drawable/ic_coupon"
+                                app:drawableTint="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/seatSelectionLt"
+                            android:layout_width="@dimen/size_200"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:padding="@dimen/margin_15">
+
+                            <Spinner
+                                android:id="@+id/seatSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/spinner_height"
+                                android:gravity="start|center_vertical"
+                                android:paddingTop="@dimen/margin_10"
+                                android:paddingBottom="@dimen/margin_10"
+                                 />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_1"
+                            android:background="@color/colorGrey" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:background="@color/colorBlackSelection"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/paymentLt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/margin_10"
+                                android:layout_weight="1"
+                                android:visibility="visible"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/confirmBookBtn"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/setup_txt_payment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/margin_15"
+                                    android:drawablePadding="@dimen/margin_15"
+                                    android:gravity="start|center_vertical"
+                                    android:text="@string/pay_via_wallet"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/txtSize_14"
+                                    app:drawableEndCompat="@drawable/ic_arrow_end"
+                                    app:drawableStartCompat="@drawable/ic_cash" />
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/confirmBookBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/margin_10"
+                                android:background="@drawable/new_btn_bg"
+
+                                android:elevation="@dimen/margin_10"
+                                android:text="@string/book"
+                                android:textAllCaps="true"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/txtSize_14"
+                                android:textStyle="normal"
+                                android:visibility="visible"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/paymentLt"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/cancelChargeMsg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:textColor="@color/g_plus_dark"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:id="@+id/second_bottom_sheet_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                app:behavior_hideable="false"
+                app:behavior_peekHeight="@dimen/size_250"
+                app:layout_behavior="com.rider.afeezo.generic.CustomBottomSheetBehavior">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/driverDataLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/otpLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_15"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_bg"
+                        android:backgroundTint="@color/white"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_15"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toTopOf="@+id/dataLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <TextView
+                            android:id="@+id/rideOtp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/txtSize_18"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/share_otp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorBlack50"
+                            android:textSize="@dimen/txtSize_14" />
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/dataLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_15"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/otpLayout">
+
+<View
+    android:id="@+id/sepertaor"
+    android:layout_width="@dimen/size_80"
+    android:layout_height="6dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:background="@drawable/button_bg_gray"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="@dimen/margin_20"
+    />
+                        <com.rider.afeezo.generic.CircleImageView
+                            android:id="@+id/driverImage"
+                            android:layout_width="@dimen/size_70"
+                            android:layout_height="@dimen/size_70"
+                            android:layout_marginTop="@dimen/size_25"
+                            android:layout_marginEnd="@dimen/margin_15"
+                            android:background="@drawable/round_25"
+                            android:src="@drawable/user_placeholder"
+                            app:civ_border_color="@color/white"
+                            app:civ_border_width="@dimen/margin_3"
+                            app:layout_constraintBottom_toTopOf="@+id/etaLayout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.rider.afeezo.generic.CircleImageView
+                            android:id="@+id/driverCarImage"
+                            android:layout_width="@dimen/size_70"
+                            android:layout_height="@dimen/size_70"
+                            android:layout_marginTop="@dimen/size_25"
+                            android:layout_marginEnd="-35dp"
+                            android:background="@drawable/round_25"
+                            android:src="@drawable/user_placeholder"
+                            app:civ_border_color="@color/white"
+                            app:civ_border_width="@dimen/margin_3"
+                            app:layout_constraintBottom_toTopOf="@+id/etaLayout"
+                            app:layout_constraintEnd_toStartOf="@+id/driverImage"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/carNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_25"
+                            android:paddingStart="@dimen/margin_15"
+                            android:paddingTop="@dimen/margin_15"
+                            android:paddingEnd="@dimen/margin_15"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/txtSize_20"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/driverCarImage"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/carName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/margin_15"
+                            android:paddingEnd="@dimen/margin_15"
+                            android:textColor="@color/colorBlack50"
+                            android:textSize="@dimen/txtSize_13"
+                            app:layout_constraintEnd_toStartOf="@+id/driverCarImage"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/carNumber" />
+
+
+                        <LinearLayout
+                            android:id="@+id/lnRating"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toStartOf="@+id/driverCarImage"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/carName">
+
+
+                            <TextView
+                                android:id="@+id/driverName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="@dimen/margin_15"
+                                android:paddingTop="@dimen/margin_10"
+                                android:paddingEnd="@dimen/margin_5"
+                                android:paddingBottom="@dimen/margin_10"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/txtSize_13" />
+
+                            <ImageView
+                                android:id="@+id/starImageView"
+                                android:layout_width="@dimen/margin_15"
+                                android:layout_height="@dimen/margin_15"
+                                android:contentDescription="@string/app_name"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/star_yellow"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/driverRating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawablePadding="@dimen/margin_15"
+                                android:paddingStart="@dimen/margin_15"
+                                android:paddingEnd="@dimen/margin_1"
+                                android:textColor="@color/black"
+                                app:drawableStartCompat="@drawable/star_yellow" />
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/etaLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/margin_15"
+                            android:visibility="visible"
+                            app:layout_constraintTop_toBottomOf="@+id/lnRating">
+
+                            <TextView
+                                android:id="@+id/efLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/estimated_fare"
+                                android:textColor="@color/colorBlack50"
+                                android:textSize="@dimen/txtSize_11"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/estimatedFare"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/margin_5"
+                                android:paddingBottom="@dimen/margin_5"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/txtSize_18"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/efLabel" />
+
+                            <TextView
+                                android:id="@+id/etaLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/eta_full"
+                                android:textColor="@color/colorBlack50"
+                                android:textSize="@dimen/txtSize_11"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/estimatedTimeArrival"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/margin_5"
+                                android:paddingBottom="@dimen/margin_5"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/txtSize_16"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/etaLabel" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/labelPayWith"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:elevation="@dimen/margin_10"
+                            android:paddingStart="@dimen/margin_15"
+                            android:paddingEnd="@dimen/margin_15"
+                            android:text="@string/pay_with"
+                            android:textColor="@color/colorBlack50"
+                            android:textSize="@dimen/txtSize_13"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etaLayout" />
+
+                        <TextView
+                            android:id="@+id/tvPaymentRide"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_15"
+                            android:background="@drawable/button_bg_grey"
+                            android:drawablePadding="@dimen/margin_15"
+                            android:gravity="center_vertical"
+                            android:padding="@dimen/margin_15"
+                            android:text="@string/cash"
+                            android:textColor="@color/colorBlack50"
+                            android:textSize="@dimen/txtSize_13"
+                            app:drawableStartCompat="@drawable/ic_cash_on_delivery"
+                            app:layout_constraintBottom_toTopOf="@+id/lnOptions"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/labelPayWith" />
+
+                        <LinearLayout
+                            android:id="@+id/lnOptions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <TextView
+                                android:id="@+id/endRideLt"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_15"
+                                android:layout_weight="1"
+                                android:background="@drawable/button_bg_border"
+                                android:elevation="@dimen/margin_10"
+                                android:gravity="center"
+                                android:padding="@dimen/margin_10"
+                                android:text="@string/end_ride"
+                                android:textColor="@color/colorBlack50"
+                                android:textSize="@dimen/txtSize_14"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/cancelRideLt"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_15"
+                                android:layout_weight="1"
+                                android:background="@drawable/button_bg_border"
+                                android:elevation="@dimen/margin_10"
+                                android:gravity="center"
+                                android:padding="@dimen/margin_10"
+                                android:text="@string/cancel_ride"
+                                android:textColor="@color/colorBlack50"
+                                android:textSize="@dimen/txtSize_14"
+                                android:textStyle="bold" />
+
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/shareDetails"
+                                android:layout_width="@dimen/size_50"
+                                android:layout_height="@dimen/size_50"
+                                android:layout_marginTop="@dimen/margin_15"
+                                android:layout_marginBottom="@dimen/margin_15"
+                                android:layout_marginEnd="15dp"
+                                android:background="@drawable/button_bg"
+                                android:contentDescription="@string/app_name"
+                                android:elevation="@dimen/margin_10"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/margin_10"
+                                android:src="@drawable/ic_share"
+                                app:tint="@color/white" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/callDriverLt"
+                                android:layout_width="@dimen/size_50"
+                                android:layout_height="@dimen/size_50"
+                                android:layout_marginEnd="@dimen/margin_15"
+                                android:layout_marginTop="@dimen/margin_15"
+                                android:layout_marginBottom="@dimen/margin_15"
+                                android:background="@drawable/button_bg"
+                                android:backgroundTint="@color/green_color"
+                                android:contentDescription="@string/app_name"
+                                android:elevation="@dimen/margin_10"
+                                android:padding="@dimen/margin_15"
+                                android:src="@drawable/ic_call_driver"
+                                app:tint="@color/black" />
+
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/findingRideLt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="@dimen/margin_20"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvFindDriver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="@dimen/margin_15"
+                android:text="@string/finding_driver"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtSize_14"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/indicator"
+                style="@style/AVLoadingIndicatorView.Large"
+                android:layout_width="@dimen/size_250"
+                android:layout_height="@dimen/size_250"
+                android:layout_margin="@dimen/margin_20"
+                app:indicatorColor="@color/indicator_color"
+                app:layout_constraintBottom_toTopOf="@+id/cancelRequestBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFindDriver" />
+
+
+            <TextView
+                android:id="@+id/cancelRequestBtn"
+                android:layout_width="@dimen/size_250"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_bg_border"
+                android:gravity="center"
+                android:padding="@dimen/margin_15"
+                android:text="@string/cancel_ride"
+                android:textColor="@color/colorBlack50"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/indicator" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sosBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/margin_15"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@color/indicator_color"
+        android:padding="@dimen/margin_15"
+        android:text="@string/label_emergency"
+        android:textColor="@color/white_same"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/lets_go_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin_20"
+        android:visibility="visible" />
+
+    <include
+        layout="@layout/layout_main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:visibility="visible" />
+
+    <include
+        android:id="@+id/toolbarCommon"
+        layout="@layout/include_toolbar_main"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/confirmLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@drawable/button_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_15"
+        android:text="@string/confirm_location"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txtSize_16"
+        android:visibility="gone" />
+
+
+    <ImageView
+        android:id="@+id/imgBackRide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:background="@drawable/round_25"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/margin_15"
+        android:src="@drawable/ic_long_arrow_left"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/edtLocate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/fbBtn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="@dimen/margin_8"-->
+<!--        android:visibility="gone"-->
+<!--       android:layout_centerInParent="true"-->
+<!--        android:background="@drawable/button_bg_grey"-->
+<!--        android:layout_marginTop="@dimen/margin_10">-->
+
+
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/tvLets"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="@dimen/margin_8"-->
+
+<!--            android:elevation="@dimen/margin_10"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:padding="@dimen/margin_15"-->
+<!--            android:text="Go To Active Ride"-->
+<!--            android:textColor="@color/black_same"-->
+<!--            android:textSize="@dimen/txtSize_14"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fbBtn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginEnd="@dimen/margin_5"
+    android:src="@mipmap/ic_launcher"
+    android:visibility="gone"
+    android:contentDescription="@string/_123" />
+
+</RelativeLayout>
+    <include layout="@layout/layout_schedule_pickup" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

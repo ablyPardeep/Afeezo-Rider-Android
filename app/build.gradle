@@ -1,0 +1,131 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 33
+    defaultConfig {
+        applicationId "com.rider.afeezo"
+        minSdkVersion 23
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0.0"
+//        versionName "TV-2.2.0.20221227"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        debug {
+            keyAlias 'yocabrider'
+            keyPassword 'rider123'
+            storePassword 'rider123'
+            storeFile file('../riderapp.jks')
+        }
+        config {
+            keyAlias 'yocabrider'
+            keyPassword 'rider123'
+            storePassword 'rider123'
+            storeFile file('../riderapp.jks')
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'BASE_URL', '"https://afeezo.com/api/v1.1/"'
+//          buildConfigField 'String', 'BASE_URL', '"https://vivocabs.4livedemo.com/api/v1.1/"'
+            resValue "string", "app_name", "Afeezo Rider"
+            applicationIdSuffix ""
+            debuggable false
+        }
+        debug_test {
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "Afeezo Rider-Test"
+            buildConfigField 'String', 'BASE_URL', '"https://afeezo.com/api/v1.1/"'
+//            buildConfigField 'String', 'BASE_URL', '"https://demo.vivocabs.com/api/v1.1/"'
+            minifyEnabled false
+            debuggable true
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "Afeezo Rider-Dev"
+//            buildConfigField 'String', 'BASE_URL', '"https://testing.vivocabs.com/api/v1.1/"'
+            buildConfigField 'String', 'BASE_URL', '"https://afeezo.com/api/v1.1/"'
+            debuggable true
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    dataBinding.enabled = true
+    android.defaultConfig.vectorDrawables.useSupportLibrary = true
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':cropper')
+    implementation project(':filepickernew')
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.activity:activity-ktx:1.6.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.31"
+
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.google.android.libraries.places:places:2.5.0'
+    implementation 'com.google.firebase:firebase-analytics:20.0.1'
+    implementation 'com.google.firebase:firebase-core:20.0.1'
+    implementation 'com.facebook.android:facebook-android-sdk:12.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+    implementation 'com.google.android.gms:play-services-auth:20.0.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.1'
+    implementation 'com.google.android.gms:play-services-location:19.0.0'
+    implementation 'com.akexorcist:googledirectionlibrary:1.1.1'
+    implementation 'com.google.firebase:firebase-database:20.0.3'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+    implementation "com.airbnb.android:lottie:3.4.0"
+    implementation 'com.hbb20:ccp:2.5.4'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.braintreepayments:card-form:5.2.0'
+    implementation 'com.wang.avi:library:2.1.3'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.google.maps.android:android-maps-utils:2.2.6'
+    // Add the Firebase Crashlytics SDK.
+    implementation 'com.google.firebase:firebase-crashlytics:17.3.0'
+
+
+//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+
+
+
+}

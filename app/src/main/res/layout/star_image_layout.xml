@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/startLayout"
+    android:layout_width="@dimen/size_50"
+    android:layout_height="@dimen/size_50"
+    android:layout_margin="@dimen/margin_5"
+    android:background="@drawable/ic_star_grey_filled"
+    android:gravity="center"
+    android:minWidth="@dimen/size_50"
+    android:minHeight="@dimen/size_50"
+    android:orientation="vertical">
+
+</LinearLayout>

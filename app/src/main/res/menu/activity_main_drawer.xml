@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/firstGroup"
+        android:checkableBehavior="single"
+
+        >
+        <!--app:actionLayoulayout_searchyout/layout_wallet_icon"-->
+
+        <item
+            android:id="@+id/nav_booking"
+            android:title="@string/my_bookings" />
+        <item
+            android:id="@+id/nav_location"
+            android:title="@string/my_location"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_wallet"
+            android:title="@string/my_wallet" />
+        <item
+            android:id="@+id/nav_offer"
+            android:title="@string/offers"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_fare"
+            android:title="@string/fares" />
+        <item
+            android:id="@+id/nav_payments"
+            android:title="@string/payment" />
+        <item
+            android:id="@+id/nav_rewards"
+            android:title="@string/reward_points" />
+        <item
+            android:id="@+id/nav_share"
+            android:title="@string/share_earn" />
+
+        <item
+            android:id="@+id/nav_support"
+            android:title="@string/support" />
+        <item
+            android:id="@+id/nav_contactus"
+            android:title="@string/contact_us" />
+        <item
+            android:id="@+id/nav_privacy"
+            android:title="@string/privacy_policy" />
+        <item
+            android:id="@+id/nav_aboutus"
+            android:title="@string/about_us" />
+        <item
+            android:id="@+id/nav_terms"
+            android:title="@string/termsConditions" />
+        <item
+            android:id="@+id/nav_contacts"
+            android:title="@string/emergency_contacts" />
+        <item
+            android:id="@+id/nav_changeLanguage"
+            android:title="@string/change_language" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/logout" />
+        <item
+            android:id="@+id/nav_saved_places"
+            android:title="@string/saved_places" />
+        <item
+            android:id="@+id/nav_request_data"
+            android:title="@string/request_my_data" />
+        <item
+            android:id="@+id/nav_delete_account"
+            android:title="@string/delete_my_account" />
+
+    </group>
+</menu>

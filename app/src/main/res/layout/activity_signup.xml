@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_15"
+        android:paddingStart="0dp"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingEnd="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_10"
+        android:src="@drawable/ic_long_arrow_left"
+        android:tint="@color/black"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_mini"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/facebookBtn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_fb_bg"
+            android:text="@string/login_with_facebook"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/googleBtn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_google_bg"
+            android:text="@string/google"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/text_bg"
+            android:gravity="center"
+            android:layerType="software"
+            android:text="@string/caption_or"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_text"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/startBtn"
+        app:layout_constraintTop_toBottomOf="@+id/imageOtp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10"
+                android:layerType="software"
+                android:lineSpacingExtra="@dimen/margin_10"
+                android:text="@string/register_label"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtSize_18"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10"
+                android:layerType="software"
+                android:lineSpacingExtra="@dimen/margin_5"
+                android:paddingTop="@dimen/margin_10"
+                android:paddingBottom="@dimen/margin_10"
+                android:text="@string/register_desc"
+                android:textColor="@color/colorBlack50"
+                android:textSize="@dimen/txtSize_13"
+                android:textStyle="normal" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/inputFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10"
+                app:cardBackgroundColor="@color/colorGrey"
+                app:cardCornerRadius="@dimen/margin_5">
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_. "
+                    android:ellipsize="end"
+                    android:gravity="top"
+                    android:hint="@string/name"
+                    android:inputType="text"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:padding="@dimen/margin_15"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/colorBlack50"
+                    android:textSize="@dimen/txtSize_16">
+                    <requestFocus />
+                </EditText>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="@dimen/margin_10"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/colorGrey"
+                app:cardCornerRadius="4dp"
+                app:cardUseCompatPadding="true">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/primary_text">
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edt_bg"
+                        android:ellipsize="end"
+                        android:gravity="top"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:padding="@dimen/margin_10"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorBlack50"
+                        android:textSize="@dimen/txtSize_16" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/colorGrey"
+                app:cardCornerRadius="@dimen/margin_5">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:hintEnabled="false"
+                    app:passwordToggleTint="@color/black">
+
+                    <EditText
+                        android:id="@+id/etConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:gravity="top"
+                        android:hint="@string/phone"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:padding="@dimen/margin_15"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/txtSize_16" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/inputEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10"
+                app:cardBackgroundColor="@color/colorGrey"
+                app:cardCornerRadius="@dimen/margin_5">
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:gravity="top"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:padding="@dimen/margin_15"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/colorBlack50"
+                    android:textSize="@dimen/txtSize_16" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/inputReferral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10"
+                app:cardBackgroundColor="@color/colorGrey"
+                app:cardCornerRadius="@dimen/margin_5">
+
+                <EditText
+                    android:id="@+id/etReferral"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:hint="@string/referral"
+                    android:inputType="number"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:padding="@dimen/margin_15"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/colorBlack50"
+                    android:textSize="@dimen/txtSize_16" />
+
+                <ImageView
+                    android:id="@+id/verifyOtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right|center"
+                    android:background="@drawable/button_bg"
+                    android:elevation="@dimen/margin_5"
+                    android:padding="@dimen/margin_5"
+                    android:text="@string/verify"
+                    android:textSize="@dimen/txtSize_16"
+                    android:visibility="gone" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/referralMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:padding="@dimen/margin_5"
+                android:text=""
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/codepicker"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:ccpDialog_keyboardAutoPopup="false"
+            app:ccp_countryPreference="US,IN,NZ"
+            app:ccp_defaultPhoneCode="91" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputPhoneNo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_10"
+            app:hintEnabled="false">
+
+            <EditText
+                android:id="@+id/etPhoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:ellipsize="end"
+                android:hint="@string/enter_phone_number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:textColorHint="@color/divider"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:background="@drawable/button_bg"
+        android:text="@string/agree_label"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txtSize_16"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

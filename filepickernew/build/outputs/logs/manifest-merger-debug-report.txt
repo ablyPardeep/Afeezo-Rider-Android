@@ -1,0 +1,71 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:2:1-31:12
+	package
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:4:5-36
+		INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+		INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:7:22-77
+application
+ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:9:5-29:19
+	android:supportsRtl
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:11:9-35
+	tools:targetApi
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:12:9-28
+	android:allowBackup
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:10:9-35
+activity#droidninja.filepicker.FilePickerActivity
+ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:13:9-15:62
+	android:configChanges
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:15:13-59
+	android:name
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:14:13-47
+activity#droidninja.filepicker.MediaDetailsActivity
+ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:16:9-18:62
+	android:configChanges
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:18:13-59
+	android:name
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:17:13-49
+provider#droidninja.filepicker.utils.FilePickerProvider
+ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:20:9-28:20
+	android:grantUriPermissions
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:24:13-47
+	android:authorities
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:22:13-82
+	android:exported
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:23:13-37
+	android:name
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:21:13-53
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:25:13-27:58
+	android:resource
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:27:17-55
+	android:name
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml:26:17-67
+uses-sdk
+INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+		INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+		ADDED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml
+		INJECTED from /home/pardeep/pardeep/Afeezo-Rider/filepickernew/src/main/AndroidManifest.xml

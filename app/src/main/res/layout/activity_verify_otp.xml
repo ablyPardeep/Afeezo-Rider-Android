@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_20">
+
+    <TextView
+        android:id="@+id/verifyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/verify_number"
+        android:textColor="@color/primary_text"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/verifyText"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:paddingStart="0dp"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingEnd="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_10"
+        android:src="@drawable/ic_long_arrow_left"
+        android:tint="@color/black"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/otpSent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageOtp"
+        android:layout_marginTop="@dimen/margin_20"
+        android:lineSpacingExtra="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_20"
+        android:text="@string/otp_label"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txtSize_18"
+        app:layout_constraintBottom_toTopOf="@+id/pinView"
+        app:layout_constraintTop_toBottomOf="@+id/imageOtp" />
+
+    <TextView
+        android:id="@+id/enterOtp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/otpSent"
+        android:layout_marginTop="@dimen/margin_10"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/margin_10"
+        android:padding="@dimen/margin_15"
+        android:text="@string/otp_resend_timer"
+        android:textColor="@color/colorBlack50"
+        android:textSize="@dimen/txtSize_13"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/pinView" />
+
+
+    <TextView
+        android:id="@+id/changeNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_30"
+        android:gravity="center"
+        android:text="@string/change_number"
+        android:textColor="@color/primary_text"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/enterOtp" />
+
+    <com.rider.afeezo.generic.PinView
+        android:id="@+id/pinView"
+        style="@style/PinWidget.PinView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:background="@android:color/transparent"
+        android:cursorVisible="true"
+        android:inputType="number"
+        android:itemBackground="@drawable/button_bg_grey"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txtSize_18"
+        android:visibility="visible"
+        app:cursorWidth="2dp"
+        app:itemCount="6"
+        app:itemHeight="@dimen/size_50"
+        app:itemSpacing="@dimen/margin_10"
+        app:itemWidth="@dimen/size_50"
+        app:layout_constraintBottom_toTopOf="@+id/enterOtp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otpSent"
+        app:lineColor="@android:color/transparent"
+        app:lineWidth="0dp"
+        app:viewType="rectangle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/facebookBtn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg_common"
+            android:text="RESEND OTP"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_text"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/verifyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+            android:text="@string/verify_otp_label"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txtSize_16"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

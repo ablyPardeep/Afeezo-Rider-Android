@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="fb_dark">#5881DB</color>
+    <color name="g_plus_dark">#D24A3C</color>
+    <color name="green_dark">#2e7d32</color>
+    <color name="disable_bg">#15000000</color>
+    <color name="color_return_request_bg">#E1E1E1</color>
+    <color name="color_light_bg">#F6F6F6</color>
+    <color name="searchbox_hint_text_color">#a4a4a4</color>
+    <color name="toolbar_color">#212121</color>
+
+    <color name="account_background_color">#424242</color>
+    <color name="charcoal_black">#424242</color>
+
+    <color name="wallet_bg">#FCF8F9</color>
+    <color name="background_bg">#FCF8F9</color>
+
+    <color name="status_confirm">#7BCB48</color>
+    <color name="color_pending">#fcc900</color>
+
+    <color name="gray_dark_transparent">#ae858585</color>
+
+    <color name="trans_black_25">#40000000</color>
+    <color name="chrome_grey">#F2F2F2</color>
+    <color name="secondary_text">#727272</color>
+
+    <!--Colors from new design-->
+    <color name="colorYellow">#FFD500</color>
+    <color name="primary_text">#000000</color>
+    <color name="colorBlack50">#80FFFFFF</color>
+    <color name="colorBlackSelection">#1C1C1C</color>
+    <color name="colorGrey">#393939</color>
+    <color name="white">#000000</color>
+    <color name="card_back">#393939</color>
+    <color name="white_same">#ffffff</color>
+    <color name="black_light">#999999</color>
+    <color name="grey_light">#999999</color>
+    <color name="background_payment_card">#1C1C1C</color>
+    <color name="black_split">#000000</color>
+    <color name="black_same">#000000</color>
+    <color name="grey_same">#80000000</color>
+    <color name="grey_text">#8E8E8E</color>
+    <color name="black">#ffffff</color>
+    <color name="divider">#1C1C1C</color>
+    <color name="light_yellow">#33FFBF00</color>
+    <color name="indicator_color">#17AAE6</color>
+    <color name="green_color">#58CC3D</color>
+    <color name="wallet_toolbar_color">#FFAA00</color>
+    <color name="wallet_red_color">#D92121</color>
+    <color name="login_hint">#80FFFFFF</color>
+    <color name="radio_unselected">#818181</color>
+    <color name="radio_selected">#FFFFFF</color>
+
+</resources>

@@ -1,0 +1,67 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="tool_tip">15dp</dimen>
+
+    <dimen name="margin_1">1dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="margin_3">3dp</dimen>
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_7">7dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="margin_15">15dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_19">19dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    <dimen name="margin_48">48dp</dimen>
+
+    <dimen name="size_25">25dp</dimen>
+    <dimen name="size_29">29dp</dimen>
+    <dimen name="size_30">30dp</dimen>
+    <dimen name="size_35">35dp</dimen>
+    <dimen name="size_40">40dp</dimen>
+    <dimen name="size_50">50dp</dimen>
+     <dimen name="size_60">60dp</dimen>
+    <dimen name="size_70">70dp</dimen>
+    <dimen name="size_80">80dp</dimen>
+    <dimen name="size_100">100dp</dimen>
+    <dimen name="size_110">110dp</dimen>
+    <dimen name="size_150">150dp</dimen>
+    <dimen name="size_200">200dp</dimen>
+    <dimen name="size_250">250dp</dimen>
+    <dimen name="size_300">300dp</dimen>
+    <dimen name="size_350">350dp</dimen>
+
+    <dimen name="spinner_height">40dp</dimen>
+    <dimen name="arrow_size">45dp</dimen>
+    <dimen name="overall_padding">60dp</dimen>
+    <dimen name="pagination_progress_bar_size">24dp</dimen>
+
+
+    <dimen name="txtSize_10">10sp</dimen>
+    <dimen name="txtSize_11">11sp</dimen>
+    <dimen name="txtSize_12">12sp</dimen>
+    <dimen name="txtSize_13">13sp</dimen>
+    <dimen name="txtSize_14">14sp</dimen>
+    <dimen name="txtSize_16">16sp</dimen>
+    <dimen name="txtSize_18">18sp</dimen>
+    <dimen name="txtSize_20">20sp</dimen>
+    <dimen name="txtSize_24">24sp</dimen>
+    <dimen name="txtSize_25">25sp</dimen>
+    <dimen name="txtSize_30">30sp</dimen>
+    <dimen name="slidetoact_default_area_margin">8dp</dimen>
+    <dimen name="slidetoact_default_icon_margin">16dp</dimen>
+    <dimen name="slidetoact_default_text_size">16sp</dimen>
+    <dimen name="pv_pin_view_item_size">48dp</dimen>
+    <dimen name="pv_pin_view_item_spacing">5dp</dimen>
+    <dimen name="pv_pin_view_item_line_width">2dp</dimen>
+    <dimen name="pv_pin_view_cursor_width">2dp</dimen>
+</resources>

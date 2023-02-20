@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_15">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_15"
+        android:text="@string/are_you_in_emergency"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txtSize_20"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_15"
+        android:text="@string/emergency_message"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txtSize_14" />
+
+
+    <com.rider.afeezo.generic.SlideToActView
+        android:id="@+id/tvSos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_15"
+        app:animation_duration="500"
+        app:area_margin="@dimen/margin_5"
+        app:border_radius="@dimen/margin_10"
+        app:icon_margin="@dimen/margin_5"
+        app:inner_color="@color/bt_blue"
+        app:outer_color="@color/colorBlackSelection"
+        app:slider_height="@dimen/overall_padding"
+        app:text="@string/swipe_to_alert"
+        app:text_color="@color/black"
+        app:text_size="@dimen/txtSize_14"
+        app:text_style="bold" />
+
+
+</LinearLayout>

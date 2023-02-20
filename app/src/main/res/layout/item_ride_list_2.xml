@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_5">
+
+        <com.rider.afeezo.generic.CircleImageView
+            android:id="@+id/driverImg"
+            android:layout_width="@dimen/size_70"
+            android:layout_height="@dimen/size_70"
+            android:layout_margin="@dimen/margin_15"
+            android:background="@drawable/round_25"
+            android:src="@drawable/user_placeholder"
+            app:layout_constraintBottom_toTopOf="@+id/tv_startLocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_tripFare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/margin_10"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtSize_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_tripDateTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTripStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtSize_11"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_tripFare"
+            app:layout_constraintBottom_toTopOf="@+id/tv_tripDateTime"
+            app:layout_constraintStart_toEndOf="@+id/tv_tripFare" />
+
+        <TextView
+            android:id="@+id/tv_tripDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/margin_10"
+            android:paddingEnd="@dimen/margin_10"
+            android:textColor="@color/colorBlack50"
+            android:textSize="@dimen/txtSize_13"
+            app:layout_constraintBottom_toTopOf="@+id/driverName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tripFare" />
+
+        <TextView
+            android:id="@+id/driverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/margin_15"
+            android:padding="@dimen/margin_10"
+            android:textColor="@color/black"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/tv_startLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tripDateTime" />
+
+        <TextView
+            android:id="@+id/tripRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/margin_15"
+            android:padding="@dimen/margin_10"
+            android:textColor="@color/black"
+            android:visibility="visible"
+            app:drawableStartCompat="@drawable/ic_saved"
+            app:drawableTint="@color/colorYellow"
+            app:layout_constraintBaseline_toBaselineOf="@+id/driverName"
+            app:layout_constraintBottom_toTopOf="@+id/tv_startLocation"
+            app:layout_constraintStart_toEndOf="@+id/driverName" />
+
+
+        <TextView
+            android:id="@+id/tv_startLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/margin_10"
+            android:ellipsize="end"
+            android:padding="@dimen/margin_10"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            app:drawableStartCompat="@drawable/round_10"
+            app:layout_constraintBottom_toTopOf="@+id/tv_endLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tripRating" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="@dimen/size_25"
+            android:layout_marginStart="@dimen/margin_19"
+            android:background="@color/divider"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_endLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_startLocation" />
+
+        <TextView
+            android:id="@+id/tv_endLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/margin_15"
+            android:ellipsize="end"
+            android:padding="@dimen/margin_15"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            app:drawableStartCompat="@drawable/round_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_startLocation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:background="@color/divider" />
+
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include
+        android:id="@+id/toolbarLt"
+        layout="@layout/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_15"
+        android:id="@+id/tvTitleData"
+        android:textColor="@color/black"
+        android:text="@string/request_system_owner_to_get_your_account_information"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLt"/>
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@drawable/button_bg_border"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_. "
+        android:hint="@string/name"
+        android:longClickable="false"
+        android:maxLines="1"
+        android:textColorHint="@color/colorBlack50"
+        android:padding="@dimen/margin_15"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleData"
+        android:textSize="@dimen/txtSize_14" />
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:layout_marginTop="@dimen/size_50"
+        android:background="@drawable/button_bg_border"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/colorBlack50"
+        android:longClickable="false"
+        android:maxLines="1"
+        android:padding="@dimen/margin_15"
+        android:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@+id/etName"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txtSize_14" />
+    <EditText
+        android:id="@+id/edtRequestdetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_200"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@drawable/button_bg_border"
+        android:gravity="top"
+        android:hint="@string/write_your_message"
+        android:imeOptions="actionGo"
+        android:inputType="textMultiLine"
+        android:padding="@dimen/margin_15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/colorBlack50"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/txtSize_14" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_20"
+        android:id="@+id/tvGdprPolicy"
+       app:layout_constraintTop_toBottomOf="@+id/edtRequestdetails"/>
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:layout_weight="1"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@color/wallet_toolbar_color"
+        android:elevation="@dimen/margin_10"
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        android:textColor="@color/black_same"
+        android:textSize="@dimen/txtSize_16"
+        android:textStyle="normal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

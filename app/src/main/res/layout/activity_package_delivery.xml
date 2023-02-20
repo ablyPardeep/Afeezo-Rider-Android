@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.PackageDeliveryActivity">
+
+        <include
+            android:id="@+id/toolbarLt"
+            layout="@layout/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/toolbarLt">
+
+            <RadioButton
+                android:id="@+id/radio0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_3"
+                android:background="@drawable/package_delivery_btn_bg"
+                android:button="@android:color/transparent"
+                android:checked="true"
+                android:paddingHorizontal="@dimen/margin_20"
+                android:paddingVertical="@dimen/margin_10"
+                android:text="@string/i_am_sending"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/toolbarLt" />
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/package_delivery_btn_bg"
+                android:button="@android:color/transparent"
+                android:paddingHorizontal="@dimen/margin_20"
+                android:paddingVertical="@dimen/margin_10"
+                android:text="@string/i_am_receiving"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/toolbarLt" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!--        <Button-->
+        <!--            android:id="@+id/receivingBtn"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/margin_5"-->
+        <!--            android:background="@drawable/button_bg_black"-->
+        <!--            android:paddingHorizontal="@dimen/size_35"-->
+        <!--            android:text="@string/i_am_receiving"-->
+        <!--            android:textAllCaps="false"-->
+        <!--            android:textColor="@android:color/white"-->
+        <!--            android:textSize="@dimen/txtSize_14"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/guideline"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/sendingBtn" />-->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/pickup"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/txtSize_18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_3"
+                    android:ellipsize="end"
+                    android:hint="Add your pickup address"
+                    android:maxLines="1"
+                    android:textColor="@color/address_light_color"
+                    android:textSize="@dimen/txtSize_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPickup" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/pickupAddRecipientLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_30"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvPickAddress"
+                    app:layout_constraintTop_toBottomOf="@id/tvPickAddress">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgCall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_25"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/ic_home"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAddReceipnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_3"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/add_recipient"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/txtSize_14"
+                        app:layout_constraintStart_toEndOf="@+id/imgCall"
+                        app:layout_constraintTop_toTopOf="@+id/imgCall" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvConfirmDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_3"
+                        android:text="@string/add_recipient"
+
+                        android:textColor="@color/address_light_color"
+                        android:textSize="@dimen/txtSize_14"
+                        app:layout_constraintStart_toEndOf="@+id/imgCall"
+                        app:layout_constraintTop_toBottomOf="@id/tvAddReceipnt" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_5"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/ic_arrow_end"
+                        app:layout_constraintBottom_toBottomOf="@id/tvConfirmDetails"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvAddReceipnt" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pickupNoteLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/pickupAddRecipientLayout"
+                app:layout_constraintTop_toBottomOf="@id/pickupAddRecipientLayout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgMeetCrub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/round_25"
+                    android:contentDescription="@string/app_name"
+                    android:padding="@dimen/margin_15"
+                    android:src="@drawable/sticky_fill"
+                    app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMeetCrub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_3"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/meet_crub"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/txtSize_14"
+                    app:layout_constraintStart_toEndOf="@+id/imgMeetCrub"
+                    app:layout_constraintTop_toTopOf="@+id/imgMeetCrub" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddNoteToDriver"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_3"
+                    android:text="@string/add_note_for_driver"
+                     android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/address_light_color"
+                    android:textSize="@dimen/txtSize_14"
+                    app:layout_constraintStart_toEndOf="@+id/imgMeetCrub"
+                    app:layout_constraintEnd_toStartOf="@id/arrowOne"
+                    app:layout_constraintTop_toBottomOf="@id/tvMeetCrub" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrowOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:contentDescription="@string/app_name"
+                    android:padding="@dimen/margin_5"
+                    android:src="@drawable/ic_arrow_end"
+                    app:layout_constraintBottom_toBottomOf="@id/tvAddNoteToDriver"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvMeetCrub" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/margin_24"
+                    android:layout_marginTop="@dimen/size_35"
+                    android:background="@color/color_return_request_bg"
+                    app:layout_constraintTop_toBottomOf="@id/pickupNoteLayout" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDropOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/size_25"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/dropOff"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/txtSize_18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDropOffAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_3"
+                    android:ellipsize="end"
+                    android:hint="Add your dropoff address"
+                    android:maxLines="1"
+                    android:textColor="@color/address_light_color"
+                    android:textSize="@dimen/txtSize_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDropOff" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/dropoffAddRecipientLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_30"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvDropOffAddress"
+                    app:layout_constraintTop_toBottomOf="@id/tvDropOffAddress">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgCallDropOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/round_25"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/ic_home"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAddReceipntDropOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_3"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/add_recipient"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/txtSize_14"
+                        app:layout_constraintStart_toEndOf="@+id/imgCallDropOff"
+                        app:layout_constraintTop_toTopOf="@+id/imgCallDropOff" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvConfirmDetailsDropOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_3"
+                        android:text="@string/add_recipient"
+
+                        android:textColor="@color/address_light_color"
+                        android:textSize="@dimen/txtSize_14"
+                        app:layout_constraintStart_toEndOf="@+id/imgCallDropOff"
+                        app:layout_constraintTop_toBottomOf="@id/tvAddReceipntDropOff" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/arrowDropOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_5"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/ic_arrow_end"
+                        app:layout_constraintBottom_toBottomOf="@id/tvConfirmDetailsDropOff"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvAddReceipntDropOff" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dropoffNoteLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/dropoffAddRecipientLayout"
+                app:layout_constraintTop_toBottomOf="@id/dropoffAddRecipientLayout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgMeetCrubDroOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_25"
+                    android:contentDescription="@string/app_name"
+                    android:padding="@dimen/margin_15"
+                    android:src="@drawable/sticky_fill"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMeetCrubDropOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_3"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/meet_crub"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/txtSize_14"
+                    app:layout_constraintStart_toEndOf="@+id/imgMeetCrubDroOff"
+                    app:layout_constraintTop_toTopOf="@+id/imgMeetCrubDroOff" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddNoteToDriverDropOff"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_3"
+                    android:text="@string/add_note_for_driver"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/address_light_color"
+                    android:textSize="@dimen/txtSize_14"
+                    app:layout_constraintStart_toEndOf="@+id/imgMeetCrubDroOff"
+                    app:layout_constraintEnd_toStartOf="@id/arrowOneDropOff"
+                    app:layout_constraintTop_toBottomOf="@id/tvMeetCrubDropOff" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrowOneDropOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:contentDescription="@string/app_name"
+                    android:padding="@dimen/margin_5"
+                    android:src="@drawable/ic_arrow_end"
+                    app:layout_constraintBottom_toBottomOf="@id/tvAddNoteToDriverDropOff"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvMeetCrubDropOff" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/submitBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:background="@drawable/button_bg_black"
+
+                    android:paddingHorizontal="@dimen/size_35"
+                    android:text="@string/submit"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/txtSize_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dropoffNoteLayout"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

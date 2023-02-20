@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_15">
+
+    <TextView
+        android:id="@+id/txtIssue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_15"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txtSize_18" />
+
+    <EditText
+        android:id="@+id/comments"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_150"
+        android:background="@drawable/button_bg_grey"
+        android:gravity="top"
+        android:hint="@string/comments"
+        android:textColorHint="@color/colorBlack50"
+        android:textColor="@color/black"
+        android:maxLength="200"
+        android:padding="@dimen/margin_15"
+        />
+
+    <TextView
+        android:id="@+id/txtCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:paddingStart="@dimen/margin_15"
+        android:paddingEnd="0dp"
+        android:paddingBottom="@dimen/margin_15"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/okBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_btn_bg"
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        android:layout_marginBottom="@dimen/size_30"
+        android:textColor="@color/black_same"
+        android:textSize="@dimen/txtSize_14"
+        android:textStyle="normal" />
+</LinearLayout>

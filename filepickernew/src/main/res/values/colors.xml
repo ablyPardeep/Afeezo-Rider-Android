@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="row_active">#efefef</color>
+  <color name="colorPrimary">#000000</color>
+  <color name="colorPrimaryDark">#000000</color>
+  <color name="colorAccent">#000000</color>
+  <color name="bg_gray">#ecedef</color>
+  <color name="transparent_black">#94333232</color>
+  <color name="checkbox_color">#FB4846</color>
+  <color name="checkbox_unchecked_color">#DFDFDF</color>
+  <color name="search_icon_color">#000000</color>
+  <color name="black">#000000</color>
+  <color name="white">#ffffff</color>
+
+  <drawable name="tab_gray">@color/bg_gray</drawable>
+  <drawable name="tab_white">@color/black</drawable>
+</resources>

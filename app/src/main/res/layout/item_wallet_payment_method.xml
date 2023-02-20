@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="isWalletSelected"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/parentLt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_16">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWalletMethodName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/my_wallet"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtSize_14"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddValueMethod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/add_money_to_wallet_plus"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtSize_12"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            app:cardCornerRadius="@dimen/margin_8"
+            app:cardElevation="@dimen/margin_5"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddValueMethod">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:id="@+id/layWallet"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_wallet"
+                android:padding="@dimen/margin_24">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/ivSelectWallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{isWalletSelected}"
+                    android:background="@drawable/radio_flat_selector"
+                    android:button="@android:color/transparent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAvalBalLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:text="@string/available_balance"
+                    android:textColor="@color/black_same"
+                    android:textSize="@dimen/txtSize_12"
+                    app:layout_constraintStart_toEndOf="@+id/ivSelectWallet"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAvalBal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    tools:text="$250:00"
+                    android:textColor="@color/black_same"
+                    android:textSize="@dimen/txtSize_24"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/ivSelectWallet"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAvalBalLabel" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_payment_wallet" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!--
+            <TextView
+                android:id="@+id/moreBtnName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/size_50"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:background="@drawable/button_bg_border"
+                android:elevation="@dimen/margin_5"
+                android:gravity="center"
+                android:padding="@dimen/margin_10"
+                android:textColor="@color/colorBlack50"
+                android:textSize="@dimen/txtSize_14"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivMethod"
+                app:layout_constraintTop_toBottomOf="@+id/ivMethod"
+
+                />
+        -->
+        <!-- <androidx.appcompat.widget.AppCompatImageView
+             android:id="@+id/ivMethod"
+             android:layout_width="@dimen/size_50"
+             android:layout_height="@dimen/size_50"
+             android:padding="@dimen/margin_10"
+             android:src="@drawable/ic_wallet"
+             app:layout_constraintBottom_toTopOf="@+id/moreBtnName"
+             app:layout_constraintEnd_toStartOf="@+id/tvMethodName"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+
+         <TextView
+             android:id="@+id/tvMethodName"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:padding="@dimen/margin_15"
+             android:text="@string/cash"
+             android:textColor="@color/black"
+             android:textSize="@dimen/txtSize_14"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toEndOf="@+id/ivMethod"
+             app:layout_constraintTop_toTopOf="parent" />
+
+         <TextView
+             android:id="@+id/tvWallet"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:padding="@dimen/margin_10"
+             android:text="@string/cash"
+             android:textColor="@color/black"
+             android:textSize="@dimen/txtSize_14"
+             android:visibility="gone"
+             app:layout_constraintBottom_toBottomOf="@+id/tvMethodName"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="@+id/tvMethodName" />
+
+         <TextView
+             android:id="@+id/moreBtnName"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_marginStart="@dimen/size_50"
+             android:layout_marginTop="@dimen/margin_10"
+             android:layout_marginEnd="@dimen/margin_10"
+             android:layout_marginBottom="@dimen/margin_10"
+             android:background="@drawable/button_bg_border"
+             android:elevation="@dimen/margin_5"
+             android:gravity="center"
+             android:padding="@dimen/margin_10"
+             android:textColor="@color/colorBlack50"
+             android:textSize="@dimen/txtSize_14"
+             android:visibility="visible"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toEndOf="@+id/ivMethod"
+             app:layout_constraintTop_toBottomOf="@+id/ivMethod"
+
+             />
+
+         <TextView
+             android:id="@+id/tvWalletMoney"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:padding="@dimen/margin_15"
+             android:textColor="@color/black"
+             android:textSize="@dimen/txtSize_14"
+             android:textStyle="bold"
+             android:visibility="visible"
+             app:layout_constraintBottom_toBottomOf="@+id/tvMethodName"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="@+id/tvMethodName" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

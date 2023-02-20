@@ -1,0 +1,39 @@
+plugins{
+    id  'com.android.library'
+}
+
+android {
+
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion rootProject.compileSdkVersion
+        versionCode 1
+        versionName PUBLISH_VERSION
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+        }
+        debug_test {
+
+        }
+        debug {
+        }
+
+    }
+}
+
+android.libraryVariants
+dependencies {
+    api "androidx.appcompat:appcompat:$androidXLibraryVersion"
+    implementation "androidx.exifinterface:exifinterface:$androidXLibraryVersion"
+}
+

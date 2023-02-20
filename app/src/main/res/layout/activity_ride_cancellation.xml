@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_15">
+
+
+    <LinearLayout
+        android:id="@+id/cancelChargeLt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cancelChargeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/margin_15"
+            android:paddingTop="@dimen/margin_15"
+            android:paddingEnd="@dimen/margin_5"
+            android:paddingBottom="@dimen/margin_15"
+            android:textColor="@color/wallet_red_color"
+            android:textSize="@dimen/txtSize_18"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cancelCharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_15"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/txtSize_16"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:padding="@dimen/margin_15"
+        android:text="@string/please_select_the_reasnon_of_cancellation"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txtSize_18" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroupCancelReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_bg"
+        android:padding="@dimen/margin_10"
+        android:backgroundTint="@color/account_background_color"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/commentsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_10"
+            android:paddingBottom="@dimen/margin_10"
+            android:text="@string/write_some_additional_details"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/txtSize_14" />
+
+        <EditText
+            android:id="@+id/edtCanceldetails"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_200"
+            android:background="@drawable/edit_bg"
+            android:gravity="top"
+            android:imeOptions="actionGo"
+            android:inputType="textMultiLine"
+            android:padding="@dimen/margin_15"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/txtSize_14" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginBottom="@dimen/margin_15"
+        android:background="@drawable/new_btn_bg"
+
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        android:textColor="@color/black_same"
+        android:textSize="@dimen/txtSize_14"
+        android:textStyle="normal"
+        android:visibility="visible" />
+
+
+</LinearLayout>

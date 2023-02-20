@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "1067549599514",
+    "firebase_url": "https://paradisecabs-a1a7e-default-rtdb.firebaseio.com",
+    "project_id": "paradisecabs-a1a7e",
+    "storage_bucket": "paradisecabs-a1a7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067549599514:android:68e8495227daf78faf6ea3",
+        "android_client_info": {
+          "package_name": "com.driver.afeezo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067549599514-ei2qbauiq9ht44onc5unvdmb874b5p4r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.driver.afeezo",
+            "certificate_hash": "460ca0c4c1384a4801a94c7c79401d0fdd38a47b"
+          }
+        },
+        {
+          "client_id": "1067549599514-va0q6190t0qhte1l0j6ilfufn031vm27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDloMTRYK1sfahPLl0rmy4KWg5VPXN2VqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067549599514-va0q6190t0qhte1l0j6ilfufn031vm27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067549599514:android:15d85fbdd57f6f3daf6ea3",
+        "android_client_info": {
+          "package_name": "com.rider.afeezo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067549599514-dl7lpa625o9pg2n9t1ilfdo98p1gvvkh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rider.afeezo",
+            "certificate_hash": "460ca0c4c1384a4801a94c7c79401d0fdd38a47b"
+          }
+        },
+        {
+          "client_id": "1067549599514-va0q6190t0qhte1l0j6ilfufn031vm27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDloMTRYK1sfahPLl0rmy4KWg5VPXN2VqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067549599514-va0q6190t0qhte1l0j6ilfufn031vm27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

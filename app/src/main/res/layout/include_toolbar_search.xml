@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/margin_10">
+
+
+    <ImageView
+        android:id="@+id/img_tool_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_15"
+        android:src="@drawable/ic_long_arrow_left"
+        app:layout_constraintBottom_toTopOf="@+id/lnEdt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/tvToolbarLabel"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/margin_10"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/margin_15"
+        android:paddingBottom="@dimen/margin_15"
+        android:singleLine="true"
+        android:text="@string/pick_up_label"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txtSize_18"
+        app:layout_constraintBottom_toBottomOf="@+id/img_tool_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_tool_back"
+        app:layout_constraintTop_toTopOf="@+id/img_tool_back" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lnEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:background="@drawable/button_bg_grey"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_tool_back">
+
+        <EditText
+            android:id="@+id/edtTimePicker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+           android:focusable="false"
+            android:maxLines="1"
+            android:padding="@dimen/margin_15"
+            android:textColor="@color/black_split"
+            android:textColorHint="@color/secondary_text"
+            android:textCursorDrawable="@drawable/cursor_grey"
+            android:textSize="@dimen/txtSize_16"
+           android:visibility="gone"
+            android:layout_marginStart="@dimen/margin_20"
+            app:layout_constraintEnd_toStartOf="@+id/srcDelBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/edtPickupSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/round_5"
+            android:drawablePadding="@dimen/margin_10"
+            android:hint="@string/pickup_location"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:padding="@dimen/margin_15"
+            android:singleLine="true"
+            android:textColor="@color/black_split"
+            android:textColorHint="@color/secondary_text"
+            android:textCursorDrawable="@drawable/cursor_grey"
+            android:textSize="@dimen/txtSize_16"
+            app:layout_constraintBottom_toTopOf="@+id/edtDestSearch"
+            app:layout_constraintEnd_toStartOf="@+id/srcDelBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtTimePicker">
+
+            <requestFocus />
+        </EditText>
+
+        <ImageView
+            android:id="@+id/srcDelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/margin_10"
+            android:src="@drawable/ic_clear"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/edtPickupSearch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edtPickupSearch" />
+
+        <EditText
+            android:id="@+id/edtDestSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/round_5"
+            android:drawablePadding="@dimen/margin_15"
+            android:hint="@string/destination_location"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:padding="@dimen/margin_15"
+            android:singleLine="true"
+            android:textColor="@color/black_split"
+            android:textColorHint="@color/secondary_text"
+            android:textCursorDrawable="@drawable/cursor_grey"
+            android:textSize="@dimen/txtSize_16"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/destDelBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPickupSearch" />
+
+        <ImageView
+            android:id="@+id/destDelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/margin_10"
+            android:src="@drawable/ic_clear"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/edtDestSearch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edtDestSearch" />
+
+        <View
+            android:id="@+id/verticalLine"
+            android:layout_width="@dimen/margin_1"
+            android:layout_height="@dimen/size_40"
+            android:layout_marginStart="@dimen/margin_19"
+            android:background="@color/black"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/edtPickupSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/edtPickupSearch" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
