@@ -8,11 +8,14 @@
     android:gravity="center">
 
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <TextView
         android:id="@+id/imageLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_logo"
+       android:text="@string/afeezo"
+        android:textSize="@dimen/size_40"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

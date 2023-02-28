@@ -1,13 +1,14 @@
 # Afeezo-Rider-2021
 
-Release Date:- 19 May, 2022 
-Release Version:- RV-2.0.2
+Release Date:- 28 Feb,2023
+Release Version:- TV-1.0.0.20230228
 
-Tasks :
-implementation of new payment UI
+Tasks : N/A
 
-Bugs:- Fix bugs given by AME team
+Bugs:- N/A
 
-Test url:- https://demo.vivocabs.com/
+Test url:- https://afeezo.com/api/v1.1/
+
+Drive Link:- https://drive.google.com/file/d/1iUuoG1N5CRy6oPUa_N3gbDkeoRpT5Z03/view?usp=sharing
 
 =============================================================================

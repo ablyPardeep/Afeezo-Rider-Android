@@ -347,5 +347,6 @@
     <string name="upcoming_trip">Upcoming trip</string>
     <string name="finished">Finished</string>
     <string name="already_have_ride">You Already have active ride</string>
+    <string name="afeezo">Afeezo</string>
 
 </resources>
