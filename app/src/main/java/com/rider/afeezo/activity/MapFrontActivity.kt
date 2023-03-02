@@ -523,6 +523,8 @@ class MapFrontActivity : MainActivity(), OnMapReadyCallback, LocationListener,
             } else showToast(this, getString(R.string.error_something_wrong))
         } else if (tag == Constant.GET_VEHICLES) {
             vehicles = response.body() as Vehicles?
+            /** set selected position to -1 as to prevent previous position */
+            lastCarSelectedCarId = -1
             if (vehicles != null) {
                 when {
                     vehicles?.status.contentEquals("1") -> {
@@ -541,7 +543,7 @@ class MapFrontActivity : MainActivity(), OnMapReadyCallback, LocationListener,
                         mainToolbarLayout.visibility = View.VISIBLE
                         utility.showSnackBar(vehicles?.msg ?: "")
                         SEARCH_TYPE = Constant.SEARCH_SOURCE
-                        /** remove polyline from here , hence  make end point null*/
+                        /** remove polyline from here , hence make end point null*/
                         endPoint = null
                         getCurrentLoc()
                         startPoint = LatLng(

@@ -12,3 +12,17 @@ Test url:- https://afeezo.com/api/v1.1/
 Drive Link:- https://drive.google.com/file/d/1iUuoG1N5CRy6oPUa_N3gbDkeoRpT5Z03/view?usp=sharing
 
 =============================================================================
+
+Release Date:- 
+Release Version:- 
+
+Tasks : N/A
+
+Bugs:-
+# 070842 - Issue in driver signup
+
+Test url:- https://afeezo.com/api/v1.1/
+
+Drive Link:- 
+
+=============================================================================
