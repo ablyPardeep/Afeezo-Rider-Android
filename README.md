@@ -20,6 +20,9 @@ Tasks : N/A
 
 Bugs:-
 # 070842 - Issue in driver signup
+# 070839 - Able to place request booking using wallet even if the wallet amount is 0
+# 070915 - Showing pickup location empty and rider still available to request booking
+# 070836 - Issue when driver cancel ride
 
 Test url:- https://afeezo.com/api/v1.1/
 

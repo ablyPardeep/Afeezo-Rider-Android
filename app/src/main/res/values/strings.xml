@@ -366,5 +366,6 @@
     <string name="finished">Finished</string>
     <string name="already_have_ride">You Already have active ride</string>
     <string name="afeezo">Afeezo</string>
+    <string name="less_wallet_amount">InSufficient balance in wallet</string>
 
 </resources>

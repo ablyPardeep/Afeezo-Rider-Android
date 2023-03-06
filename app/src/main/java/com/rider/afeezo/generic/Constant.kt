@@ -492,6 +492,7 @@ object Constant {
 
     var CURRENCY = ""
     var currentOpen = 0
+    var walletAmount = "0.0"
     var MIN_CANCEL_WORDS = 10 // 3 sec
     var UPDATE_INTERVAL = 3000 // 3 sec
     var FATEST_INTERVAL = 5000 // 5 sec

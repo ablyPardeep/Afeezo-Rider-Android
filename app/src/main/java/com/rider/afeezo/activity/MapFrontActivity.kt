@@ -242,11 +242,11 @@ class MapFrontActivity : MainActivity(), OnMapReadyCallback, LocationListener,
                 if (bundleReceived != null) {
                     when (bundleReceived.getString("type")) {
                         Constant.RIDE_REQUEST_DECLINED_ALL_DRIVERS -> {
-                            showDialog(
-                                this@MapFrontActivity,
-                                bundleReceived.getString("message"),
-                                true
-                            )
+//                            showDialog(
+//                                this@MapFrontActivity,
+//                                bundleReceived.getString("message"),
+//                                true
+//                            )
                         }
                         Constant.RIDE_CANCELLED -> {
                             rideAccepted = false
@@ -341,7 +341,7 @@ class MapFrontActivity : MainActivity(), OnMapReadyCallback, LocationListener,
     }
 
     /**
-     * Dilaog if the notification is displayed of ride cancel
+     * Dialog if the notification is displayed of ride cancel
      * */
     fun showDialog(context: Context, msg: String?, decline: Boolean) {
         val b = AlertDialog.Builder(context, R.style.MaterialThemeDialog)
@@ -1271,6 +1271,13 @@ class MapFrontActivity : MainActivity(), OnMapReadyCallback, LocationListener,
                 if (payment_mode.isNullOrEmpty()) {
                     showToast(this, getString(R.string.pick_a_payment_option))
                     return
+                }
+                /** Here we have to check if wallet is selected and wallet amount is less than ride amount then set the error */
+                if (wallet=="1"){
+                    if (instance.getStore(this@MapFrontActivity).getString(Constant.walletAmount).toDouble()==0.0){
+                        showToast(this, getString(R.string.less_wallet_amount))
+                        return
+                    }
                 }
                 addRideRequest()
             }
@@ -3203,8 +3210,7 @@ class MapFrontActivity : MainActivity(), OnMapReadyCallback, LocationListener,
         val finishParams = vehicles?.vehiclesTypes
         finishParams?.get(0)?.isChecked = true
         selectedVehicleId = finishParams?.get(0)?.id
-        selectedFinalFare =
-            vehicles?.currencySymbol + finishParams?.get(0)?.vehicleTypeEstimateArr?.finalFare
+        selectedFinalFare = vehicles?.currencySymbol + finishParams?.get(0)?.vehicleTypeEstimateArr?.finalFare
         cabType = finishParams?.get(0)?.name
 
         vehicleAdapter = DisplayVehiclesAdapter(finishParams, this, vehicles?.currencySymbol, this)
